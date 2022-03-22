@@ -11,22 +11,22 @@ function App() {
   return (
     <BrowserRouter>
       <PageNavigation />
-    <div className="App">
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/bunnies">
-          <Bunnies />
-        </Route>
-        <Route path="/characters">
-          <Characters />
-        </Route>
-        <Route path="/workshops">
-          <Workshops />
-        </Route>
-      </Switch>
-    </div>
+      <div className="App">
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/bunnies">
+            <Bunnies />
+          </Route>
+          <Route path="/characters">
+            <Characters />
+          </Route>
+          <Route path="/workshops">
+            <Workshops />
+          </Route>
+        </Switch>
+      </div>
     </BrowserRouter>
   );
 }
