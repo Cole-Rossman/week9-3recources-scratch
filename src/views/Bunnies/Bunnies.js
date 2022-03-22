@@ -19,7 +19,7 @@ export default function Bunnies() {
 
   return (
     <div className='bunnies'>
-      <h1>Fuzzy Bunny Friends</h1>
+      <h1>Fuzzy bunny friends</h1>
       {error && <p>{error}</p>}
       {bunnies.map((bunny) => (
         <p key={bunny.id}>{bunny.name}</p>

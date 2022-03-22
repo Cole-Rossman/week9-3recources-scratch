@@ -20,7 +20,7 @@ export default function Characters() {
 
   return (
     <div className='character'>
-      <h1>Lilo and Stitch Characters</h1>
+      <h1>Lilo and Stitch characters</h1>
       {error && <p>{error}</p>}
       {characters.map((character) => (
         <p key={character.id}>{character.name}</p>
