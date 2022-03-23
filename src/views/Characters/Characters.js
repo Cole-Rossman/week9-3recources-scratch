@@ -19,12 +19,11 @@ export default function Characters() {
           setCharacters(filtered);
         }
       } catch (e) {
-        setError(e.message);
+        setError(error.message);
       }
     };
     fetchData();
   }, [speciesType]);
-  console.log(speciesType);
   return (
     <div className='character'>
       <Filter speciesType={speciesType} callback={setSpeciesType} /> 
