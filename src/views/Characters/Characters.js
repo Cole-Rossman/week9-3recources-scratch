@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Filter from '../../components/Controls/Filter';
 import { fetchCharacters, filterCharacters } from '../../services/characters';
 
-
 export default function Characters() {
   const [characters, setCharacters] = useState([]);
   const [error, setError] = useState('');
