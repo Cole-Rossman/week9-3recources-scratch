@@ -1,25 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import { fetchCharacters } from '../../services/characters';
+import Filter from '../../components/Controls/Filter';
+import { fetchCharacters, filterCharacters } from '../../services/characters';
 
 
 export default function Characters() {
   const [characters, setCharacters] = useState([]);
   const [error, setError] = useState('');
+  const [speciesType, setSpeciesType] = useState('All');
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const characterData = await fetchCharacters();
-        setCharacters(characterData);
+        if (speciesType === 'All') {
+          const characterData = await fetchCharacters();
+          setCharacters(characterData);
+        } else {
+          const filtered = await filterCharacters(speciesType);
+          setCharacters(filtered);
+        }
       } catch (e) {
         setError(e.message);
       }
     };
     fetchData();
-  }, []);
-
+  }, [speciesType]);
+  console.log(speciesType);
   return (
     <div className='character'>
+      <Filter speciesType={speciesType} callback={setSpeciesType} /> 
       <h1>Lilo and Stitch characters</h1>
       {error && <p>{error}</p>}
       {characters.map((character) => (
