@@ -22,7 +22,7 @@ export default function Characters() {
       }
     };
     fetchData();
-  }, [speciesType]);
+  }, [speciesType, error]);
   return (
     <div className='character'>
       <Filter speciesType={speciesType} callback={setSpeciesType} /> 

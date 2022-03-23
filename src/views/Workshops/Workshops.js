@@ -15,7 +15,7 @@ export default function Workshops() {
       }
     };
     fetchData();
-  }, []);
+  }, [error]);
 
   return (
     <div className='workshops'>
